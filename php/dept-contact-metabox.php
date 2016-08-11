@@ -114,6 +114,13 @@ function lc_show_dept_contact_info_meta_box( $object, $box ) { ?>
    <input type="text" name="lc_dept_office_hours_saturday_field" id="lc_dept_office_hours_saturday_field" value="<?php echo esc_attr( get_post_meta ( $object->ID, 'lc_dept_office_hours_saturday_field', true ) ); ?>" size="10" />
   </p>
 
+  <p>
+   <label for="lc_dept_office_hours_sunday_field">
+    <?php _e( "Saturday: ", "lorainccc" ); ?>
+   </label>
+   <input type="text" name="lc_dept_office_hours_sunday_field" id="lc_dept_office_hours_sunday_field" value="<?php echo esc_attr( get_post_meta ( $object->ID, 'lc_dept_office_hours_sunday_field', true ) ); ?>" size="10" />
+  </p>
+
 		<h3>Social Media Links</h3>
 
   <p>
@@ -279,6 +286,18 @@ function lc_dept_contact_save_info( $post_id, $post ) {
 	
 	 update_post_meta( $post_id, $meta_key, $new_meta_value, $meta_value );
 	
+  /* Sunday Office Hours Field */
+ /* Get the posted data and sanitize it for use as a date value. */
+ $new_meta_value = ( isset( $_POST['lc_dept_office_hours_sunday_field'] ) ? sanitize_text_field($_POST['lc_dept_office_hours_sunday_field'] ) : '' );
+
+ /* Get the meta key. */
+ $meta_key = 'lc_dept_office_hours_sunday_field';
+	
+  /* Get the meta value of the custom field key. */
+ $meta_value = get_post_meta ($post_id, $meta_key, true );
+	
+	 update_post_meta( $post_id, $meta_key, $new_meta_value, $meta_value );
+ 
  /* Facebook Social Media Link Field */
  /* Get the posted data and sanitize it for use as a date value. */
  $new_meta_value = ( isset( $_POST['lc_social_media_facebook_field'] ) ? sanitize_text_field($_POST['lc_social_media_facebook_field'] ) : '' );
