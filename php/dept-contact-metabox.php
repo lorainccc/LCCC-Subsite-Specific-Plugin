@@ -116,7 +116,7 @@ function lc_show_dept_contact_info_meta_box( $object, $box ) { ?>
 
   <p>
    <label for="lc_dept_office_hours_sunday_field">
-    <?php _e( "Saturday: ", "lorainccc" ); ?>
+    <?php _e( "Sunday: ", "lorainccc" ); ?>
    </label>
    <input type="text" name="lc_dept_office_hours_sunday_field" id="lc_dept_office_hours_sunday_field" value="<?php echo esc_attr( get_post_meta ( $object->ID, 'lc_dept_office_hours_sunday_field', true ) ); ?>" size="10" />
   </p>
@@ -125,17 +125,19 @@ function lc_show_dept_contact_info_meta_box( $object, $box ) { ?>
 
   <p>
    <label for="lc_social_media_facebook_field">
-    <?php _e( "Facebook: ", "lorainccc" ); ?>
+    <?php _e( "Facebook Username: ", "lorainccc" ); ?>
    </label>
-   <input type="text" name="lc_social_media_facebook_field" id="lc_social_media_facebook_field" value="<?php echo esc_attr( get_post_meta ( $object->ID, 'lc_social_media_facebook_field', true ) ); ?>" size="10" />
+   <input type="text" name="lc_social_media_facebook_field" id="lc_social_media_facebook_field" value="<?php echo esc_attr( get_post_meta ( $object->ID, 'lc_social_media_facebook_field', true ) ); ?>" size="30" />
   </p>
-
+  <p class="description" id="tagline-description"><strong>lorainccc</strong> is LCCC's username. Example: https://www.facebook.com/<strong>lorainccc</strong></p>
+<hr />
   <p>
    <label for="lc_social_media_twitter_field">
-    <?php _e( "Twitter: ", "lorainccc" ); ?>
+    <?php _e( "Twitter Username: ", "lorainccc" ); ?>
    </label>
-   <input type="text" name="lc_social_media_twitter_field" id="lc_social_media_twitter_field" value="<?php echo esc_attr( get_post_meta ( $object->ID, 'lc_social_media_twitter_field', true ) ); ?>" size="10" />
+   <input type="text" name="lc_social_media_twitter_field" id="lc_social_media_twitter_field" value="<?php echo esc_attr( get_post_meta ( $object->ID, 'lc_social_media_twitter_field', true ) ); ?>" size="30" />
   </p>
+  <p class="description" id="tagline-description"><strong>lorainccc</strong> is LCCC's username. Example: https://www.twitter.com/<strong>lorainccc</strong></p>
 
   <?php
 }
